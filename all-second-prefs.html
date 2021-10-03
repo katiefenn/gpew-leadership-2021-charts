@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['sankey']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'From');
+        data.addColumn('string', 'To');
+        data.addColumn('number', 'Weight');
+        data.addRows([
+          ["1st: Denyer-Ramsay","2nd: Womack-Ormond",2802],
+          ["1st: Denyer-Ramsay","2nd: Ali",620],
+          ["1st: Denyer-Ramsay","2nd: Hemingway-Rothery",570],
+          ["1st: Denyer-Ramsay","2nd: Gunstock",212],
+          ["1st: Denyer-Ramsay","2nd: RON",229],
+          ["1st: Denyer-Ramsay","2nd: NA",629],
+          ["1st: Womack-Ormond","2nd: Denyer-Ramsay",2400],
+          ["1st: Womack-Ormond","2nd: Ali",254],
+          ["1st: Womack-Ormond","2nd: Hemingway-Rothery",2802],
+          ["1st: Womack-Ormond","2nd: Gunstock",89],
+          ["1st: Womack-Ormond","2nd: RON",109],
+          ["1st: Womack-Ormond","2nd: NA",362],
+          ["1st: Ali","2nd: Denyer-Ramsay",343],
+          ["1st: Ali","2nd: Womack-Ormond",213],
+          ["1st: Ali","2nd: Hemingway-Rothery",1016],
+          ["1st: Ali","2nd: Gunstock",239],
+          ["1st: Ali","2nd: RON",140],
+          ["1st: Ali","2nd: NA",471],
+          ["1st: Hemingway-Rothery","2nd: Denyer-Ramsay",110],
+          ["1st: Hemingway-Rothery","2nd: Womack-Ormond",70],
+          ["1st: Hemingway-Rothery","2nd: Ali",97],
+          ["1st: Hemingway-Rothery","2nd: Gunstock",23],
+          ["1st: Hemingway-Rothery","2nd: RON",8],
+          ["1st: Hemingway-Rothery","2nd: NA",34],
+          ["1st: Gunstock","2nd: Denyer-Ramsay",63],
+          ["1st: Gunstock","2nd: Womack-Ormond",28],
+          ["1st: Gunstock","2nd: Ali",74],
+          ["1st: Gunstock","2nd: Hemingway-Rothery",25],
+          ["1st: Gunstock","2nd: RON",2],
+          ["1st: Gunstock","2nd: NA",20],
+          ["1st: RON","2nd: Denyer-Ramsay",6],
+          ["1st: RON","2nd: Womack-Ormond",4],
+          ["1st: RON","2nd: Hemingway-Rothery",3],
+          ["1st: RON","2nd: NA",5]
+        ]);
+
+        // Sets chart options.
+        var options = {
+          width: 600,
+        };
+
+        // Instantiates and draws our chart, passing in some options.
+        var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="sankey_basic" style="width: 900px; height: 300px;"></div>
+  </body>
+</html>
